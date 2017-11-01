@@ -1,0 +1,10 @@
+/*
+ * 8-10
+ * Now include DIET in the model
+ */
+
+PROC GLM DATA=RESTRUCTURED;
+   CLASS GENDER DIET;
+   MODEL LDL_A LDL_B LDL_C = GENDER|DIET / NOUNI;
+   REPEATED DRUG / NOM;
+RUN;
